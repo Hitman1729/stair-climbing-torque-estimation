@@ -1,2 +1,110 @@
-# stair-climbing-torque-estimation
-Data and code for hip and knee joint torque estimation during stair climbing using Fourier-augmented Euler-Lagrange inverse dynamics
+# Stair Climbing Joint Torque Estimation
+## Video-Based Hip and Knee Joint Torque Estimation
+## During Stair Climbing Using Fourier-Augmented
+## Euler-Lagrange Inverse Dynamics
+
+### Authors
+[Student 1], [Student 2], [Student 3],
+[Student 4], [Student 5], [Professor Name]
+Department of Mechanical Engineering,
+[Institution Name], [City], India
+
+### Corresponding author
+[Professor email]
+
+### Journal
+Journal of Biomechanics (Under Review)
+
+---
+
+## Repository Structure
+
+### /data/raw_angles/
+Six CSV files containing raw hip and knee angle
+data exported directly from Kinovea Version 0.9.5
+at 120 frames per second.
+
+Each file contains two columns:
+- Column 1: Time (seconds)
+- Column 2: Angle (radians)
+
+File naming:
+- [Subject]_hip_angles.csv  — hip angle from vertical
+- [Subject]_knee_angles.csv — included knee angle
+
+Subjects:
+- Abhiram: 61 kg, 1.69 m, 181 frames, T = 1.502 s
+- Hitesh:  63 kg, 1.70 m, 158 frames, T = 1.310 s
+- Aniket:  73 kg, 1.76 m, 163 frames, T = 1.351 s
+
+### /data/converted_angles/
+Three Excel files containing the converted joint
+flexion angles after applying q = pi - |theta_raw|
+to the raw Kinovea output.
+
+### /code/MATLAB_Fourier_Fitting.m
+MATLAB script for Fourier 4th-order curve fitting
+of the converted hip and knee angle data.
+
+Requirements: MATLAB R2020a or later,
+Curve Fitting Toolbox
+
+Instructions:
+1. Load the converted angle CSV file for the subject
+2. Set the subject name at line 10
+3. Run the script
+4. Coefficients are printed to the command window
+5. Fitted curves are plotted automatically
+
+### /code/MATLAB_EulerLagrange_Torque.m
+MATLAB script for computing hip and knee joint
+torques using the Euler-Lagrange 2-DOF dynamic model.
+
+Requirements: MATLAB R2020a or later
+
+Instructions:
+1. Enter Fourier coefficients from fitting script
+2. Set subject body mass M and height H at line 15
+3. Run the script
+4. Torque time histories are plotted and exported
+
+### /supplementary/
+Supplementary Table S1 containing all fitted Fourier
+coefficients (a0 through b4), R² and RMSE values
+for hip and knee angles of all three subjects.
+
+---
+
+## Staircase Specifications
+- Riser height: 14.5 cm
+- Tread depth: 29.5 cm
+- Pitch angle: 26.2 degrees
+- Camera: Sony Alpha A6100, 120 fps, Full HD
+
+## Angle Conversion Formula
+q = pi - |theta_raw|
+Applied identically to hip and knee angles.
+Hip raw angles are negative in Kinovea.
+Knee raw angles are positive and obtuse in Kinovea.
+
+---
+
+## Citation
+If you use this data or code in your research,
+please cite:
+
+[Author names] (2025). Video-Based Hip and Knee
+Joint Torque Estimation During Stair Climbing Using
+Fourier-Augmented Euler-Lagrange Inverse Dynamics.
+Journal of Biomechanics. DOI: [paper DOI]
+
+Repository DOI: 10.5281/zenodo.XXXXXXX
+
+---
+
+## License
+This repository is licensed under the
+Creative Commons Attribution 4.0 International
+License (CC BY 4.0).
+You are free to share and adapt the material
+for any purpose with appropriate credit.
