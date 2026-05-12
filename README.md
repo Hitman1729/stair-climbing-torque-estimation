@@ -26,8 +26,8 @@ Each file contains two columns:
 - Column 2: Angle (radians)
 
 File naming:
-- Subject_hip_angles.csv  — hip angle from vertical
-- Subject_knee_angles.csv — included knee angle
+- Subject_hip_file.csv  — hip angle from vertical
+- Subject_knee_file.csv — included knee angle
 
 Subjects:
 - subject 1: 61 kg, 1.69 m, 181 frames, T = 1.502 s
@@ -38,17 +38,25 @@ Subjects:
 Three Excel files containing the converted joint
 flexion angles after applying theta = pi - |theta_raw|
 to the raw Kinovea output.
+File naming for converted angles:
+- Subject_converted_angles.xlsx  — hip angle from vertical
+- Subject_converted_angles.xlsx — included knee angle
+
+File naming for fourier fitting:
+- Subject_hip_data.xlsx  — hip angle from vertical
+- Subject_knee_data.xlsx — included knee angle
 
 ### /code/MATLAB_Fourier_Fitting.m
 MATLAB script for Fourier 4th-order curve fitting
-of the converted hip and knee angle data.
+of the converted hip and knee angle data. Also remember here we considered only 14 points from the main
+data set for the accurate curve fitting 
 
 Requirements: MATLAB R2020a or later,
 Curve Fitting Toolbox
 
 Instructions:
-1. Load the converted angle CSV file for the subject
-2. Set the subject name at line 35
+1. Load the hip and knee data xlsx file for the subject
+2. Set the subject name
 3. Run the script
 4. Coefficients are printed to the command window
 5. Fitted curves are plotted automatically
@@ -61,7 +69,7 @@ Requirements: MATLAB R2020a or later
 
 Instructions:
 1. Enter Fourier coefficients from fitting script
-2. Set subject body mass M and height H at line 15
+2. Set subject body mass M and height H at line 32
 3. Run the script
 4. Torque time histories are plotted and exported
 
