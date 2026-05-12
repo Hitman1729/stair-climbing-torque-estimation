@@ -21,25 +21,25 @@ Journal of Biomechanics (Under Review)
 
 ### /data/raw_angles/
 Six CSV files containing raw hip and knee angle
-data exported directly from Kinovea Version 0.9.5
+data exported directly from Kinovea
 at 120 frames per second.
 
 Each file contains two columns:
-- Column 1: Time (seconds)
+- Column 1: Time (milli seconds)
 - Column 2: Angle (radians)
 
 File naming:
-- [Subject]_hip_angles.csv  — hip angle from vertical
-- [Subject]_knee_angles.csv — included knee angle
+- Subject_hip_angles.csv  — hip angle from vertical
+- Subject_knee_angles.csv — included knee angle
 
 Subjects:
-- Abhiram: 61 kg, 1.69 m, 181 frames, T = 1.502 s
-- Hitesh:  63 kg, 1.70 m, 158 frames, T = 1.310 s
-- Aniket:  73 kg, 1.76 m, 163 frames, T = 1.351 s
+- subject 1: 61 kg, 1.69 m, 181 frames, T = 1.502 s
+- subject 2: 63 kg, 1.70 m, 158 frames, T = 1.310 s
+- subject 3: 73 kg, 1.76 m, 163 frames, T = 1.351 s
 
 ### /data/converted_angles/
 Three Excel files containing the converted joint
-flexion angles after applying q = pi - |theta_raw|
+flexion angles after applying theta = pi - |theta_raw|
 to the raw Kinovea output.
 
 ### /code/MATLAB_Fourier_Fitting.m
@@ -51,7 +51,7 @@ Curve Fitting Toolbox
 
 Instructions:
 1. Load the converted angle CSV file for the subject
-2. Set the subject name at line 10
+2. Set the subject name at line 35
 3. Run the script
 4. Coefficients are printed to the command window
 5. Fitted curves are plotted automatically
@@ -82,29 +82,8 @@ for hip and knee angles of all three subjects.
 - Camera: Sony Alpha A6100, 120 fps, Full HD
 
 ## Angle Conversion Formula
-q = pi - |theta_raw|
+theta = pi - |theta_raw|
 Applied identically to hip and knee angles.
 Hip raw angles are negative in Kinovea.
 Knee raw angles are positive and obtuse in Kinovea.
 
----
-
-## Citation
-If you use this data or code in your research,
-please cite:
-
-[Author names] (2025). Video-Based Hip and Knee
-Joint Torque Estimation During Stair Climbing Using
-Fourier-Augmented Euler-Lagrange Inverse Dynamics.
-Journal of Biomechanics. DOI: [paper DOI]
-
-Repository DOI: 10.5281/zenodo.XXXXXXX
-
----
-
-## License
-This repository is licensed under the
-Creative Commons Attribution 4.0 International
-License (CC BY 4.0).
-You are free to share and adapt the material
-for any purpose with appropriate credit.
