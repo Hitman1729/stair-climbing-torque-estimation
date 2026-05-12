@@ -4,13 +4,13 @@
 ## Euler-Lagrange Inverse Dynamics
 
 ### Authors
-[Student 1], [Student 2], [Student 3],
-[Student 4], [Student 5], [Professor Name]
+Hitesh Mohan Veludandi, Subrahmanya Krishna Teja Chimalakonda, Mohammad Sameer,
+Sri Charan Sarma Eranki, Mani Varma Vathadi, Dr. Emon Barua
 Department of Mechanical Engineering,
-[Institution Name], [City], India
+Maulana Azad National Institute of Technology, Bhopal, India
 
 ### Corresponding author
-[Professor email]
+ emon.barua@manit.ac.in / imon18enator@gmail.com
 
 ### Journal
 Journal of Biomechanics (Under Review)
