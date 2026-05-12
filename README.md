@@ -1,7 +1,4 @@
-# Stair Climbing Joint Torque Estimation
-## Video-Based Hip and Knee Joint Torque Estimation
-## During Stair Climbing Using Fourier-Augmented
-## Euler-Lagrange Inverse Dynamics
+# Estimation of Hip and Knee Joint Torques During Stair Climbing Using Euler-Lagrange Formulation and Kinovea-Based Kinematic Analysis
 
 ### Authors
 Hitesh Mohan Veludandi, Subrahmanya Krishna Teja Chimalakonda, Mohammad Sameer,
